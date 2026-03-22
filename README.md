@@ -36,7 +36,8 @@ This method is used when a vendor provides only a raw SHA-512 hash value.
 ```Command
 sha512sum <filename>
 Example
-sha512sum splunk-10.2.1-c892b66d163d-linux-amd64.deb```
+sha512sum splunk-10.2.1-c892b66d163d-linux-amd64.deb
+```
 - How It Works
 - This command calculates the SHA-512 hash of the specified file and prints it in the terminal. The output must then be compared manually with the expected hash published by the vendor.
 
@@ -53,7 +54,8 @@ This method can be used when the vendor provides a .sha512 checksum file
 ```Command
 sha512sum -c <file.sha512>
 Example
-sha512sum -c splunk-10.2.1-c892b66d163d-linux-amd64.deb.sha512```
+sha512sum -c splunk-10.2.1-c892b66d163d-linux-amd64.deb.sha512
+```
 - How it Works
 - The .sha512 file contains the expected SHA-512 hash and the exact filename it should match. The -c option tells sha512sum to read that file, calculate the hash of the target file automatically, and compare the results.
 
@@ -69,7 +71,8 @@ This script automates manual verification when only a raw SHA-512 hash is availa
 ```Usage
 ./verify.sh <filename> "<expected_sha512>"
 Example
-./verify.sh splunk-10.2.1-c892b66d163d-linux-amd64.deb "71a5b34618a90e38d953448d39f67b019b5b6157fb2e9d1fb09cbaf2497f7520ad15b345db35d875f9ab0bb44b5070746ede32d695c24e4ffc0783d412018183"```
+./verify.sh splunk-10.2.1-c892b66d163d-linux-amd64.deb "71a5b34618a90e38d953448d39f67b019b5b6157fb2e9d1fb09cbaf2497f7520ad15b345db35d875f9ab0bb44b5070746ede32d695c24e4ffc0783d412018183"
+```
 
 - This script calculates the hash of the target file and compares it with the expected hash value entered by the user.
 ---
